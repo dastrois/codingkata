@@ -7,8 +7,8 @@ import ma.glasnost.orika.impl.DefaultMapperFactory;
 import org.codingdojo.CustomerDataLayer;
 import org.codingdojo.ICustomerDataAccess;
 import org.codingdojo.dao.Customer;
-import org.codingdojo.dao.CustomerMatches;
 import org.codingdojo.dao.ShoppingList;
+import org.codingdojo.vo.CustomerMatches;
 import org.codingdojo.vo.common.ExternalShoppingList;
 
 public class CustomerDataAccess implements ICustomerDataAccess {

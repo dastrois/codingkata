@@ -90,7 +90,7 @@ public class Customer {
     }
 
     public void addShoppingList(ShoppingList consumerShoppingList) {
-        ArrayList<ShoppingList> newList = new ArrayList<ShoppingList>(this.shoppingLists);
+        ArrayList<ShoppingList> newList = new ArrayList<>(this.shoppingLists);
         newList.add(consumerShoppingList);
         this.setShoppingLists(newList);
     }
@@ -109,5 +109,13 @@ public class Customer {
     @Override
     public int hashCode() {
         return Objects.hash(externalId, masterExternalId, companyNumber);
+    }
+
+    @Override
+    public String toString() {
+        return "Customer [" +
+                internalId != null ? "internalId=" + internalId + ", " : "" +
+                externalId != null ? "externalId=" + externalId + ", " : "" +
+                 "]";
     }
 }

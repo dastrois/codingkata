@@ -8,8 +8,8 @@ import org.codingdojo.ICustomerSync;
 import org.codingdojo.constant.CustomerType;
 import org.codingdojo.dao.Address;
 import org.codingdojo.dao.Customer;
-import org.codingdojo.dao.CustomerMatches;
 import org.codingdojo.exception.ConflictException;
+import org.codingdojo.vo.CustomerMatches;
 import org.codingdojo.vo.common.ExternalCustomer;
 import org.codingdojo.vo.common.ExternalShoppingList;
 

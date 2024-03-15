@@ -1,4 +1,6 @@
-package org.codingdojo.dao;
+package org.codingdojo.vo;
+
+import org.codingdojo.dao.Customer;
 
 import java.util.ArrayList;
 import java.util.Collection;
