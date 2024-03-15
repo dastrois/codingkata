@@ -1,6 +1,10 @@
 package org.codingdojo.impl;
 
+import ma.glasnost.orika.MapperFacade;
+import ma.glasnost.orika.MapperFactory;
+import ma.glasnost.orika.impl.DefaultMapperFactory;
 import org.codingdojo.constant.CustomerType;
+import org.codingdojo.dao.Address;
 import org.codingdojo.dao.Customer;
 import org.codingdojo.dao.CustomerMatches;
 import org.codingdojo.exception.ConflictException;
@@ -106,7 +110,11 @@ public class CustomerSync {
     }
 
     private void updateContactInfo(ExternalCustomer externalCustomer, Customer customer) {
-        customer.setAddress(externalCustomer.getPostalAddress());
+
+        MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
+        MapperFacade mapper = mapperFactory.getMapperFacade();
+
+        customer.setAddress(mapper.map(externalCustomer.getPostalAddress(), Address.class));
     }
 
     public CustomerMatches loadCompany(ExternalCustomer externalCustomer) {

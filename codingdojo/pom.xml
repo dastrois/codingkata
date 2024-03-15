@@ -37,4 +37,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>m2</id>
+            <name>mvn repository</name>
+            <url>https://mvnrepository.com/</url>
+        </repository>
+    </repositories>
+
+
 </project>

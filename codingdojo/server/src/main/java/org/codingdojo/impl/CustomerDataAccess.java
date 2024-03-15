@@ -1,8 +1,12 @@
 package org.codingdojo.impl;
 
 
+import ma.glasnost.orika.MapperFacade;
+import ma.glasnost.orika.MapperFactory;
+import ma.glasnost.orika.impl.DefaultMapperFactory;
 import org.codingdojo.dao.Customer;
 import org.codingdojo.dao.CustomerMatches;
+import org.codingdojo.dao.ShoppingList;
 import org.codingdojo.vo.common.ExternalShoppingList;
 
 public class CustomerDataAccess {
@@ -49,8 +53,12 @@ public class CustomerDataAccess {
     }
 
     public void updateShoppingList(Customer customer, ExternalShoppingList consumerShoppingList) {
-        customer.addShoppingList(consumerShoppingList);
-        customerDataLayer.updateShoppingList(consumerShoppingList);
+
+        MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
+        MapperFacade mapper = mapperFactory.getMapperFacade();
+
+        customer.addShoppingList(mapper.map(consumerShoppingList, ShoppingList.class));
+        customerDataLayer.updateShoppingList(mapper.map(consumerShoppingList, ShoppingList.class));
         customerDataLayer.updateCustomerRecord(customer);
     }
 }
