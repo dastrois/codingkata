@@ -3,6 +3,8 @@ package org.codingdojo.impl;
 import ma.glasnost.orika.MapperFacade;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
+import org.codingdojo.CustomerDataLayer;
+import org.codingdojo.ICustomerSync;
 import org.codingdojo.constant.CustomerType;
 import org.codingdojo.dao.Address;
 import org.codingdojo.dao.Customer;
@@ -13,7 +15,7 @@ import org.codingdojo.vo.common.ExternalShoppingList;
 
 import java.util.List;
 
-public class CustomerSync {
+public class CustomerSync implements ICustomerSync {
 
     private final CustomerDataAccess customerDataAccess;
 

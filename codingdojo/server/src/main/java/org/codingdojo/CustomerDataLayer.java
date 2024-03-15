@@ -1,4 +1,4 @@
-package org.codingdojo.impl;
+package org.codingdojo;
 
 
 import org.codingdojo.dao.Customer;
